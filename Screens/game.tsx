@@ -1,7 +1,7 @@
-import { View, Text, SafeAreaView, StyleSheet, ScrollView } from 'react-native'
+import { View, Text, SafeAreaView, StyleSheet, ScrollView, Image, TouchableOpacity, Button } from 'react-native'
 import React from 'react'
 import GameTable from '../Components/GameTable';
-import { size, theme } from "../Utils";
+import { size, theme, image } from "../Utils";
 import _ from 'lodash';
 import { Block } from 'galio-framework';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -91,11 +91,24 @@ const Game: React.FC = () => {
                         </View>
 
                         <View>
-                            <Text>I am some text</Text>
+                            <TouchableOpacity>
+                                <Image source={image.gameTable.coin} />
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <Image source={image.gameTable.coin} />
+                            </TouchableOpacity>
                         </View>
 
-                        <View>
-                            <Text> i am some text</Text>
+                        <View style={{ justifyContent: "space-between" }}>
+                            <Block row style={{ backgroundColor: theme.COLORS.GITHUB }}>
+                                <Block>
+                                    <Text style={{marginHorizontal:10}}>BET</Text>
+                                </Block>
+                                <Block>
+                                    <Text>0</Text>
+                                </Block>
+                            </Block>
+                            <Button title='SPIN' />
                         </View>
 
                     </Block>
